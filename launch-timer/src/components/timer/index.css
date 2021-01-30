@@ -1,0 +1,68 @@
+.date{
+    width: 200px;
+    height: 200px;
+}
+.support{
+    width: 100%;
+    height: 100%;
+    background-color: #343650;
+}
+.partTop, .partBottom{
+    width: 100%;
+    height: 50%;
+}
+.partTop{
+    width: 100%;
+    height: 50%;
+  transform-origin: bottom center;
+  transform: rotateX(0deg);
+  transform-style: preserve-3d;
+  transition-delay: 0.1s;
+  background-color: #2A2B40;
+}
+.partBottom{
+  width: 100%;
+  height: 50%;
+  transform-origin: top center;
+  transform: rotateX(90deg);
+  transform-style: preserve-3d;
+  transition-delay: 0s;
+  background-color: #2A2B40;
+}
+.majorBox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+span{
+    position: absolute;
+    margin-bottom: 28px;
+    font-size: 63px;
+    font-weight: bold;
+    text-align: center;
+    z-index: 1;
+}
+.flip .partTop{
+  transform: rotateX(-90deg);
+  transition: transform 0.3s ease-in, background-color 0.3s ease-in, color 0.3s ease-in;
+  transition-delay: 0s;
+  background-color: #343650;
+}
+.flip .partBottom {
+    transform: rotateX(0deg);
+    transition: transform 0.3s ease-in, background-color 0.3s ease-in, color 0.3s ease-in;
+    transition-delay: 0.3s;
+    background-color: #343650;
+}
+@keyframes myMove {
+    0%{
+        transform: rotateX(0deg);
+    }
+    50%{
+        transform: rotateX(90deg);
+    }
+    100%{
+        transform: rotateX(-180deg);
+    }
+  }
